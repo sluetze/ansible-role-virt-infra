@@ -19,6 +19,8 @@
 - include_tasks: hosts-add.yml
 - include_tasks: hosts-remove.yml
 - include_tasks: wait.yml
+  when:
+    - virt_infra_vms_reachable
 
 - name: Advise if SSH key was created
   debug:

@@ -31,6 +31,10 @@ virt_infra_machine_type: "q35"
 # If not specified, we default to all public keys on KVM host
 virt_infra_ssh_keys: []
 
+# there might be cases (i.e. KVMhost has no network access to vms) where it may cause problems, to try to connect via ssh to the vms
+# if this parameter is set to false, then there won't be any ssh-key-scans or other tries to remotely contact the host.
+virt_infra_vms_reachable: true
+
 # If no SSH keys are specified or found on the KVM host, we create one with this
 virt_infra_ssh_key_size: "2048"
 virt_infra_ssh_key_type: "rsa"
